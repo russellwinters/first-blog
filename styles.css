@@ -1,0 +1,354 @@
+/* !------ Progress Notes ------- */
+/* Requirements: 
+- Header with Hero image and heading overtop
+- Nav with links to appropriate pages
+-Three sections with different column dimensions on phone than on tablet/desktop
+    - .blog-post 
+    - .gallery
+    - .headshot
+    - header/footer content
+- Images, not including hero
+- Google fonts for two font families
+- Use of modifier classes 
+ */
+
+/* !------- Global Styles ------- */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* !------- Modifier Classes ------- */
+
+.text-is-centered {
+    text-align: center;
+}
+
+.is-centered {
+    margin: 0 auto;
+}
+
+.has-border {
+    border-radius: 3px;
+    border: 1px solid maroon;
+}
+
+.has-border:hover {
+    background-color: maroon;
+}
+
+
+@Media (min-width: 640px) {
+    .has-border {
+        border-radius: 5px;
+        border: 2px solid maroon;
+    }
+}
+
+@media (min-width: 1165px) {
+    .has-border {
+        border-radius: 10px;
+        border: 3px solid maroon;
+    }
+}
+/* !------- Component: Header/Footer ------- */
+
+header, 
+footer {
+    position: relative;
+    background-color: #011f4b;
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 100;
+}
+
+header {
+    height: 50px;
+}
+
+footer {
+    margin-top: 50px;
+    height: 75px;
+}
+
+header h2,
+footer h2 {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gold;
+    font-size: 1em;
+}
+
+header nav,
+footer nav {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+@media (min-width: 640px) {
+    header {
+        height: 75px;
+    }
+
+    footer {
+        height: 125px;
+    }
+
+    header h2,
+    footer h2 {
+        font-size: 1.4em;
+        left: 8%;
+    }
+
+    header nav,
+    footer nav {
+        right: 8%;
+    }
+}
+
+@media (min-width: 1165px) {
+    header {
+        height: 100px;
+    }
+
+    footer {
+        height: 150px;
+    }
+
+    header h2,
+    footer h2 {
+        font-size: 1.8em;
+        left: 10%;
+    }
+
+    header nav,
+    footer nav {
+        right: 10%;
+    }
+}
+
+
+/* !------- Component: Buttons -------  */
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: gold;
+    font-weight: bold;
+    font-size: .6em;
+    padding: 3px 7px;
+}
+
+
+@media (min-width: 640px) {
+    nav a {
+        font-size: .8em;
+    }
+}
+
+@media (min-width: 1165px) {
+    nav a {
+        font-size: 1em;
+    }
+}
+
+
+/* !------- Component: Mains -------  */
+
+.blog-post {
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Permanent Marker', cursive;
+    color: #011f4b;
+}
+
+.blog-post h2 {
+    margin: 10px 0;
+    border-bottom: 2px solid maroon;
+    color: maroon;
+}
+
+.blog-post p {
+    margin-bottom: 5px;
+    text-indent: 2em;
+}
+
+.blog-post p.no-indent {
+    text-indent: 0;
+}
+
+.image-label {
+    text-align: center;
+}
+
+.headshot {
+    width: 150px;
+    overflow-y: hidden;
+    margin-top: 25px;
+    display: block;
+    clip-path: circle(75px at center);
+}
+
+
+
+@media (min-width: 640px) {
+    .blog-post {
+        width: 60%;
+    }
+
+    .headshot {
+        width: 200px;
+        overflow-y: hidden;
+        clip-path: circle(100px at center);
+    }
+}
+
+@media (min-width: 1165px) {
+    .blog-post {
+        width: 650px;
+    }
+
+    .headshot {
+        width: 250px;
+        overflow-y: hidden;
+        clip-path: circle(125px at center);
+    }
+}
+
+/* !------- Component: Hero -------  */
+
+.hero {
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: darken;
+    background-position: 50% 35%; 
+    background-size: auto 120%;
+    background-repeat: no-repeat;
+}
+
+.year1 {
+    background-image: url(./img/year1hero.JPG);
+}
+
+.year2 {
+    background-image: url(./img/year2hero.JPG);
+}
+
+.year3 {
+    background-image: url(./img/year3hero.JPG);
+}
+
+.year4 {
+    background-image: url(./img/year4hero.JPG);
+}
+
+.year5 {
+    background-image: url(./img/year5hero.JPG);
+}
+
+.main-hero {
+    background-image: url(./img/main-hero.webp);
+}
+
+.hero h2 {
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    text-align: center;
+}
+
+
+@media (min-width: 400px) {
+    .year1,
+    .year4,
+    .year5,
+    .main-hero {
+        background-size: 120% auto;
+        background-position: 50% 10%;
+    }
+
+}
+
+@media (min-width: 640px) {
+    .hero {
+        height: 350px;
+        background-size: 130% auto;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .high-center {
+        background-position: 50% 10%;
+    }
+
+    .main-hero {
+        background-size: 100% auto;
+        background-position: 50% 70%;
+    }
+}
+
+@media (min-width: 1165px) {
+    .hero h2 {
+        font-size: 3em;
+    }
+}
+
+/* !------- Component: Cards ------- */
+
+.is-card {
+    height: 175px;
+    width: 175px;
+    margin: 15px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.is-wide {
+    height: 175px;
+    overflow-x: hidden;
+    transform: translateX(-25px);
+}
+
+.is-tall {
+    width: 175px;
+    overflow-y: hidden;
+    transform: translateY(-25px);
+}
+
+.is-tallest {
+    width: 175px;
+    overflow-y: hidden;
+}
+
+.is-square {
+    width: 200px;
+    overflow-y: hidden;
+}
+
+/* !------- Component: Gallery ------- */
+
+@media (min-width: 640px) {
+    .gallery {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 1165px) {
+    .gallery {
+        margin: 0 auto;
+        width: 650px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
